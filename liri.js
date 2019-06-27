@@ -92,9 +92,9 @@ if (argOne === "movie-this") {
             // var thedate = response.data[0].datetime;
             // console.log(thedate);
             // var thedateformatted = moment.utc(thedate).format("YYYY-MM-DD HH:mm:ss");
-            var date = moment(response.data[0].datetime).format('MM/DD/YYYY');
+            // var date = moment(response.data[0].datetime).format('MM/DD/YYYY');
             console.log(response.data[0].datetime);
-            console.log(date)
+            //  console.log(date)
 
         })
         .catch(function (error) {
