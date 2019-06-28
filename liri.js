@@ -83,20 +83,20 @@ if (argOne === "movie-this") {
     // console.log("concert this -- ive been called")
 
     var concertName = argTwo;
-    axios.get("https://rest.bandsintown.com/artists/" + concertName + "/events?app_id=codingbootcamp=trilogy").then(
+    axios.get("https://rest.bandsintown.com/artists/" + concertName + "/events?app_id=codingbootcamp=trilogy")
+        .then(
+            function (response) {
+                console.log(response.data[0]);
+                console.log("\n\n\n" + response.data[0].lineup[0]);
+                console.log(response.data[0].venue.name);
+                // var thedate = response.data[0].datetime;
+                // console.log(thedate);
+                // var thedateformatted = moment.utc(thedate).format("YYYY-MM-DD HH:mm:ss");
+                // var date = moment(response.data[0].datetime).format('MM/DD/YYYY');
+                console.log(response.data[0].datetime);
+                //  console.log(date)
 
-        function (response) {
-            console.log(response.data[0]);
-            console.log("\n\n\n" + response.data[0].lineup[0]);
-            console.log(response.data[0].venue.name);
-            // var thedate = response.data[0].datetime;
-            // console.log(thedate);
-            // var thedateformatted = moment.utc(thedate).format("YYYY-MM-DD HH:mm:ss");
-            // var date = moment(response.data[0].datetime).format('MM/DD/YYYY');
-            console.log(response.data[0].datetime);
-            //  console.log(date)
-
-        })
+            })
         .catch(function (error) {
             if (error.response) {
                 // The request was made and the server responded with a status code
@@ -130,12 +130,12 @@ if (argOne === "movie-this") {
             return console.log('Error occurred: ' + err);
         }
 
-        // console.log(data);
-        // console.log(data.tracks)
-        // console.log(data.tracks.items[2]);
-        //console.log(data.tracks.items[2]);
-        console.log(data.tracks);
-
+        //console.log(data);
+        // console.log(data.tracks.items[0])
+        console.log(process.argv[3]);
+        console.log(data.tracks.items[0].album.name);
+        console.log(data.tracks.items[0].artists[0].name);
+        console.log(data.tracks.items[0].artists[0].href);
     });
 
 
