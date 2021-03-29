@@ -1,4 +1,10 @@
 # liri-node-app
+
+<details>
+<summary> A dropdown example</summary>
+<br>
+This is how you dropdown.
+</details>
 for liri homework
 
 
